@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Infiltrados</title>
+
+  <!-- Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!--CSS-->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===================== -->
+  <!-- PANTALLA INICIO -->
+  <!-- ===================== -->
+  <div id="screen-start">
+    <h1>Infiltrados</h1>
+    <h2 class="beldo">By Beldo</h2>
+    <button id="btnStart">Jugar</button>
+  </div>
+
+  <!-- ===================== -->
+  <!-- CONFIGURACIÓN -->
+  <!-- ===================== -->
+  <div id="screen-config" style="display:none;">
+    <h2>Configuración</h2>
+
+    <label>Jugadores:</label><br>
+    <input type="number" id="playersCount" min="3"><br><br>
+
+    <label>Impostores:</label><br>
+    <input type="number" id="impostorsCount" min="1"><br><br>
+
+    <button id="btnConfigNext">Continuar</button>
+  </div>
+
+  <!-- ===================== -->
+  <!-- NOMBRES -->
+  <!-- ===================== -->
+  <div id="screen-names" style="display:none;">
+    <h2>Nombres de jugadores</h2>
+
+    <div id="namesContainer"></div>
+
+    <br>
+    <button id="btnNamesNext">Comenzar juego</button>
+  </div>
+
+  <!-- ===================== -->
+  <!-- JUEGO -->
+  <!-- ===================== -->
+  <div id="screen-game" style="display:none;">
+    <h2 id="currentPlayerName"></h2>
+
+    <div id="wordBox">
+      Mantener presionado para ver
+    </div>
+
+    <br><br>
+    <button id="btnNextPlayer">Siguiente jugador</button>
+  </div>
+
+  <!-- ===================== -->
+  <!-- PASÁ EL CELU -->
+  <!-- ===================== -->
+  <div id="screen-pass" style="display:none;">
+    <h2>Pasá el celu 📱</h2>
+    <p>Que nadie mire la pantalla</p>
+
+    <button id="btnContinue">Continuar</button>
+  </div>
+
+  <!-- ===================== -->
+  <!-- SCRIPT -->
+  <!-- ===================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>
