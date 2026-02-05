@@ -45,8 +45,19 @@ label {
 }
 
 h1 {
-    font-size: 2.6rem;
-    margin-bottom: 24px;
+    font-family: 'Bangers', cursive;
+    font-size: 4.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    color: #e6f0ff;
+}
+
+.beldo {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    text-transform: lowercase;
+    color: #7f9cff;
+    margin-bottom: 48px;
 }
 
 h2 {
@@ -84,21 +95,22 @@ input {
 
 button {
     width: 100%;
-    max-width: 280px;
-    padding: 16px;
+    max-width: 240px;   /* 👈 más chico */
+    padding: 18px;      /* 👈 más alto */
     margin-top: 16px;
-    border-radius: 14px;
+    border-radius: 16px;
     border: none;
-    background: #3a7afe;
-    color: white;
+    background: linear-gradient(135deg, #3f8cff, #36e0ff);
+    color: #0f1115;
+
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 button:active {
-    transform: scale(0.97);
+    transform: scale(0.96);
 }
 
 button.secondary {
@@ -110,11 +122,13 @@ button.secondary {
 ===================== */
 
 #wordBox {
+    position: relative;
+
     width: 100%;
     max-width: 320px;
     min-height: 120px;
 
-    margin: 24px 0;
+    margin: 48px auto 24px auto; /* 👈 CENTRADO REAL */
 
     display: flex;
     align-items: center;
@@ -132,11 +146,52 @@ button.secondary {
 
     opacity: 0.4;
     transition: opacity 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+#wordBox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #36e0ff,
+        transparent
+    );
+
+    background-size: 300% 100%;
+    animation: borderRun 2.5s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+@keyframes borderRun {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 #wordBox.revealed {
     opacity: 1;
 }
+
+#wordBox.revealed::before {
+    display: none;
+}
+
 
 /* =====================
    IMPOSTOR

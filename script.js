@@ -3,25 +3,49 @@
 // =====================
 
 const WORDS = [
-  "Pizza","Computadora","Montaña","Playa","Cine","Auto","Perro","Viaje","Música","Café",
+
+  //PALABRAS COMUNES
+  "Pizza","Computadora","Romeo Celestial","Playa","Cine","Auto","Perro","Viaje","Música","Café",
   "Teléfono","Libro","Avión","Tren","Barco","Casa","Puerta","Ventana","Silla","Mesa",
   "Zapato","Camisa","Sombrero","Reloj","Lámpara","Televisión","Radio","Celular","Teclado","Ratón",
   "Helado","Chocolate","Hamburguesa","Pan","Queso","Leche","Agua","Jugo","Cerveza","Vino",
   "Fútbol","Tenis","Basket","Natación","Ciclismo","Boxeo","Rugby","Golf","Esquí","Surf",
 
+  //LOL
+  "Summoner's Rift","ARAM","Baron Nashor","Dragon","Heraldo","Top Lane","Mid Lane","Bot Lane", "Support", "Skin", "Cooldown",
+  "Mana","Inhibitor","Gank","Ward","Smite", "Flash","Ignite","Exhaust","Ranked","Challenger","Plata",
+  "Bronce","Pentakill","Ace","Meta","Runas","Items","Combo","Outplay",
+
+  //ARGENTINA
+  "Marley","Pachu Peña","Marcelo Tinelli","Susana Giménez","Mirtha Legrand","Guido Kaczka","Cris Morena",
+  "Diego Maradona","Lionel Messi","Carlos Tévez","Juan Román Riquelme","Ricardo Darín","Guillermo Francella","Adrián Suar",
+  "Florencia Peña","Dady Brieva","Luisana Lopilato","Peter Lanzani","Tini Stoessel","Lali Espósito","Abel Pintos","Charly García"
+  ,"Gustavo Cerati","Sandro","Rodrigo","La Mona Jiménez","Patricia Sosa","Jorge Rial","Alejandro Fantino","Cacho Castaña",
+  "José María Listorti","Del Potro","Yayo","Pampita", "Alberto Fernandez","Cristina Fernández","Mauricio Macri","Lionel Scaloni",
+
+  //PAÍSES
   "Argentina","Brasil","Chile","Uruguay","Paraguay","Bolivia","Perú","México","Estados Unidos","Canadá",
   "España","Francia","Italia","Alemania","Reino Unido","China","Japón","Corea","India","Australia",
 
+  //PELICULAS
   "Titanic","Avatar","Inception","Matrix","Gladiator","Interstellar","The Godfather","Star Wars","Jurassic Park","Frozen",
   "Toy Story","Shrek","Harry Potter","The Dark Knight","Forrest Gump","Pulp Fiction","The Lion King","Finding Nemo","Up","Coco",
 
+  //CANTANTES
   "Michael Jackson","Madonna","Elton John","Freddie Mercury","Shakira","Rihanna","Beyoncé","Taylor Swift","Ed Sheeran","Adele",
-
+ 
+  //APODOs FACU
   "Gro","Topo","Iago","Bona","Cacu","El Chaz","Chuca","Migue Peña","Raspu","Naza",
   "Uli","Romo","Renzo","Juancho",
+ 
+  //CS:GO
+  "Mirage","Inferno","Dust2","Nuke","Ancient","Anubis","Cache","Train","Banana","Rampa","CT","TT Spawn","Palacio","Site",
+  "Connector","Jungla","Ventana","L", "Cielo", "Lobby","Garage", "Departamento","Mercado","Iglesia", "Tumba","Fuenta","Túnel","Puertas dobles","Cabezinha",
 
+  //ESPACIO
   "Sol","Luna","Estrella","Planeta","Galaxia","Universo","Tiempo","Reloj","Historia","Futuro",
 
+  //VIDEOJUEGOS
   "PlayStation","Xbox","Nintendo","Mario","Zelda","Pokémon","Minecraft","Fortnite","Counter Strike","League of Legends"
 ];
 
@@ -50,13 +74,19 @@ function getRandomImpostors(total, count) {
 }
 
 function showScreen(screenId) {
-  document.querySelectorAll("div[id^='screen']").forEach(div => {
+  const screens = document.querySelectorAll("div[id^='screen']");
+
+  screens.forEach(div => {
     div.style.display = "none";
     div.classList.remove("animate__animated", "animate__fadeIn");
   });
 
   const screen = document.getElementById(screenId);
-  screen.style.display = "block";
+
+  // 🔥 FORZAR RECÁLCULO DE LAYOUT
+  screen.style.display = "flex";
+  void screen.offsetHeight;
+
   screen.classList.add("animate__animated", "animate__fadeIn");
 }
 
