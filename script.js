@@ -2,52 +2,55 @@
 // VARIABLES Y ESTADO
 // =====================
 
-const WORDS = [
+const WORDS = {
 
   //PALABRAS COMUNES
-  "Pizza","Computadora","Romeo Celestial","Playa","Cine","Auto","Perro","Viaje","Música","Café",
+  "Comunes":["Pizza","Computadora","Romeo Celestial","Playa","Cine","Auto","Perro","Viaje","Música","Café",
   "Teléfono","Libro","Avión","Tren","Barco","Casa","Puerta","Ventana","Silla","Mesa",
   "Zapato","Camisa","Sombrero","Reloj","Lámpara","Televisión","Radio","Celular","Teclado","Ratón",
   "Helado","Chocolate","Hamburguesa","Pan","Queso","Leche","Agua","Jugo","Cerveza","Vino",
-  "Fútbol","Tenis","Basket","Natación","Ciclismo","Boxeo","Rugby","Golf","Esquí","Surf",
+  "Fútbol","Tenis","Basket","Natación","Ciclismo","Boxeo","Rugby","Golf","Esquí","Surf"],
 
   //LOL
-  "Summoner's Rift","ARAM","Baron Nashor","Dragon","Heraldo","Top Lane","Mid Lane","Bot Lane", "Support", "Skin", "Cooldown",
+  "PC":["Summoner's Rift","ARAM","Baron Nashor","Dragon","Heraldo","Top Lane","Mid Lane","Bot Lane", "Support", "Skin", "Cooldown",
   "Mana","Inhibitor","Gank","Ward","Smite", "Flash","Ignite","Exhaust","Ranked","Challenger","Plata",
-  "Bronce","Pentakill","Ace","Meta","Runas","Items","Combo","Outplay",
+  "Bronce","Pentakill","Ace","Meta","Runas","Items","Combo","Outplay"],
 
   //ARGENTINA
-  "Marley","Pachu Peña","Marcelo Tinelli","Susana Giménez","Mirtha Legrand","Guido Kaczka","Cris Morena",
+  "Argentina":["Marley","Pachu Peña","Marcelo Tinelli","Susana Giménez","Mirtha Legrand","Guido Kaczka","Cris Morena",
   "Diego Maradona","Lionel Messi","Carlos Tévez","Juan Román Riquelme","Ricardo Darín","Guillermo Francella","Adrián Suar",
   "Florencia Peña","Dady Brieva","Luisana Lopilato","Peter Lanzani","Tini Stoessel","Lali Espósito","Abel Pintos","Charly García"
   ,"Gustavo Cerati","Sandro","Rodrigo","La Mona Jiménez","Patricia Sosa","Jorge Rial","Alejandro Fantino","Cacho Castaña",
-  "José María Listorti","Del Potro","Yayo","Pampita", "Alberto Fernandez","Cristina Fernández","Mauricio Macri","Lionel Scaloni",
+  "José María Listorti","Del Potro","Yayo","Pampita", "Alberto Fernandez","Cristina Fernández","Mauricio Macri","Lionel Scaloni"],
 
   //PAÍSES
-  "Argentina","Brasil","Chile","Uruguay","Paraguay","Bolivia","Perú","México","Estados Unidos","Canadá",
-  "España","Francia","Italia","Alemania","Reino Unido","China","Japón","Corea","India","Australia",
+  "Geografía":["Argentina","Brasil","Chile","Uruguay","Paraguay","Bolivia","Perú","México","Estados Unidos","Canadá",
+  "España","Francia","Italia","Alemania","Reino Unido","China","Japón","Corea","India","Australia"],
 
   //PELICULAS
-  "Titanic","Avatar","Inception","Matrix","Gladiator","Interstellar","The Godfather","Star Wars","Jurassic Park","Frozen",
-  "Toy Story","Shrek","Harry Potter","The Dark Knight","Forrest Gump","Pulp Fiction","The Lion King","Finding Nemo","Up","Coco",
+  "TV":["Titanic","Avatar","Inception","Matrix","Gladiator","Interstellar","The Godfather","Star Wars","Jurassic Park","Frozen",
+  "Toy Story","Shrek","Harry Potter","The Dark Knight","Forrest Gump","Pulp Fiction","The Lion King","Finding Nemo","Up","Coco"],
 
   //CANTANTES
-  "Michael Jackson","Madonna","Elton John","Freddie Mercury","Shakira","Rihanna","Beyoncé","Taylor Swift","Ed Sheeran","Adele",
+  "Micrófono":["Michael Jackson","Madonna","Elton John","Freddie Mercury","Shakira","Rihanna","Beyoncé","Taylor Swift","Ed Sheeran","Adele"],
  
-  //APODOs FACU
-  "Gro","Topo","Iago","Bona","Cacu","El Chaz","Chuca","Migue Peña","Raspu","Naza",
-  "Uli","Romo","Renzo","Juancho",
+  //ARANJUEZ
+  "Grupo":["Gro","Topo","Iago","Bona","Cacu","El Chaz","Chuca","Migue Peña","Raspu","Naza",
+  "Uli","Romo","Renzo","Juancho"],
  
   //CS:GO
-  "Mirage","Inferno","Dust2","Nuke","Ancient","Anubis","Cache","Train","Banana","Rampa","CT","TT Spawn","Palacio","Site",
-  "Connector","Jungla","Ventana","L", "Cielo", "Lobby","Garage", "Departamento","Mercado","Iglesia", "Tumba","Fuenta","Túnel","Puertas dobles","Cabezinha",
+  "Juego":["Mirage","Inferno","Dust2","Nuke","Ancient","Anubis","Cache","Train","Banana","Rampa","CT","TT Spawn","Palacio","Site",
+  "Connector","Jungla","Ventana","L", "Cielo", "Lobby","Garage", "Departamento","Mercado","Iglesia", "Tumba","Fuenta","Túnel","Puertas dobles","Cabezinha"],
 
   //ESPACIO
-  "Sol","Luna","Estrella","Planeta","Galaxia","Universo","Tiempo","Reloj","Historia","Futuro",
+  "Espacio":["Sol","Luna","Estrella","Planeta","Galaxia","Universo","Tiempo","Reloj","Historia","Futuro"],
 
   //VIDEOJUEGOS
-  "PlayStation","Xbox","Nintendo","Mario","Zelda","Pokémon","Minecraft","Fortnite","Counter Strike","League of Legends"
-];
+  "Tecnología":["PlayStation","Xbox","Nintendo","Mario","Zelda","Pokémon","Minecraft","Fortnite","Counter Strike","League of Legends"],
+
+  //BELDI
+  "Familia":["Luis Beldi","Martín","Santiago","Facundo","Gloria","Ricardo","Alicia (tia)","Aranjuez","Alvear","Quinta (Cardales)"]
+};
 
 let players = [];
 let impostorIndexes = [];
@@ -55,13 +58,23 @@ let secretWord = "";
 let currentPlayerIndex = 0;
 let totalPlayers = 0;
 let totalImpostors = 0;
+let hintMode = false;
+let currentCategory = "";
 
 // =====================
 // UTILIDADES
 // =====================
 
 function getRandomWord() {
-  return WORDS[Math.floor(Math.random() * WORDS.length)];
+
+  const categories = Object.keys(WORDS);
+
+  currentCategory = categories[Math.floor(Math.random() * categories.length)];
+
+  const words = WORDS[currentCategory];
+
+  return words[Math.floor(Math.random() * words.length)];
+
 }
 
 function getRandomImpostors(total, count) {
@@ -105,6 +118,7 @@ document.getElementById("btnStart").addEventListener("click", () => {
 document.getElementById("btnConfigNext").addEventListener("click", () => {
   totalPlayers = parseInt(document.getElementById("playersCount").value);
   totalImpostors = parseInt(document.getElementById("impostorsCount").value);
+  hintMode = document.getElementById("hintMode").checked;
 
   if (!totalPlayers || !totalImpostors) {
     alert("Completá todos los campos");
@@ -170,10 +184,19 @@ function startNewRound() {
 const wordBox = document.getElementById("wordBox");
 
 function updateGameScreen() {
+
   const player = players[currentPlayerIndex];
-  document.getElementById("currentPlayerName").textContent =
-    `Turno de ${player.name}`;
+
+  if (hintMode) {
+    document.getElementById("currentPlayerName").textContent =
+      `Turno de ${player.name} • Categoría: ${currentCategory}`;
+  } else {
+    document.getElementById("currentPlayerName").textContent =
+      `Turno de ${player.name}`;
+  }
+
   hideWord();
+
 }
 
 function revealWord() {

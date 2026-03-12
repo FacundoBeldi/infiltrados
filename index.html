@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
   <title>Infiltrados</title>
 
   <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!--CSS-->
@@ -23,7 +24,7 @@
     <h1 class="animate__animated animate__swing animate__infinite">
       Infiltrados
     </h1>
-   
+
     <h2 class="beldo">By Beldo</h2>
     <button id="btnStart">Jugar</button>
   </div>
@@ -37,6 +38,11 @@
 
     <label>Impostores:</label><br>
     <input type="number" id="impostorsCount" min="1"><br><br>
+
+    <label style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <input type="checkbox" id="hintMode">
+      ¿Pistas?
+    </label>
 
     <button id="btnConfigNext">Continuar</button>
   </div>
@@ -75,4 +81,5 @@
   <script src="script.js"></script>
 
 </body>
+
 </html>
